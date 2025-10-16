@@ -15,4 +15,14 @@ function Book(title, author, pages, read) {
   };
 }
 
-func;
+function addBookToLibrary(title, author, pages, read) {
+  const newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
+}
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", "295 pages", "not read yet");
+addBookToLibrary("Enjoy your Life", "Al-areefy", "495 pages", "read");
+addBookToLibrary("To kill a mockingbird", "Harper Lee", "120 pages", "read");
+
+function displayArray(array) {
+  myLibrary.forEach((book) => {});
+}
