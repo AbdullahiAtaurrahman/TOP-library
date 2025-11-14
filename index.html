@@ -9,7 +9,27 @@
   <body>
     <div class="books"></div>
     <div class="form">
-      <button class="add-book">Add a new book</button>
+      <form action="" method="post">
+        <div>
+          <label for="book">Book</label>
+          <input type="text" name="book" id="book" />
+        </div>
+        <div>
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" />
+        </div>
+        <div>
+          <label for="pages">Pages</label>
+          <input type="text" name="pages" id="pages" />
+        </div>
+        <div>
+          <label for="read">Read</label>
+          <input type="checkbox" name="read" id="read" />
+        </div>
+        <button type="submit" class="add-book submit">Add book</button>
+      </form>
+
+      <!-- <button class="add-book">Add a new book</button> -->
     </div>
     <script async src="app.js"></script>
   </body>
