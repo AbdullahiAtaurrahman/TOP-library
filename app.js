@@ -1,4 +1,5 @@
 const container = document.querySelector(".books");
+const submitBtn = document.querySelector(".submit");
 
 const myLibrary = [];
 
@@ -28,14 +29,31 @@ function addBookToLibrary(title, author, read, pages) {
       <p class="title">${book.title}</p>
       <p class="author">${book.author}</p>
       <p class="pages">${book.pages} pages</p>
+      <p class="read">${book.read}</p>
       </div>
       <div class="right">
+      <label for="read">Read?
       <input type="checkbox" name="read" id="read" />
+      <label for="remove">Remove
+      <input type="checkbox" name="remove" id="remove" />
       </div>`;
   container.appendChild(bookElement);
-  console.log(container);
 }
 
-addBookToLibrary("Musa", "Isa", "read", "124");
-addBookToLibrary("Musa", "Isa", "read", "124");
-addBookToLibrary("Musa", "Isa", "read", "124");
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let bookValue = document.querySelector("#book").value;
+  let authorValue = document.querySelector("#author").value;
+  let pagesValue = document.querySelector("#pages").value;
+  let readStatus = document.querySelector("#readStatus").checked;
+  let readLabel = readStatus ? "Read" : "Not read";
+  addBookToLibrary(bookValue, authorValue, readLabel, pagesValue);
+
+  document.querySelector("#book").value = "";
+  document.querySelector("#author").value = "";
+  document.querySelector("#pages").value = "";
+  document.querySelector("#readStatus").checked = false;
+});
+
+addBookToLibrary("To kill a mocking bird", "Harper Lee", "read", "129");
+addBookToLibrary("Enjoy your life", "Al-Areefy", "read", "364");
