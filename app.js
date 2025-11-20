@@ -74,8 +74,8 @@ submitBtn.addEventListener("click", (e) => {
   renderLibrary();
 });
 
-addBookToLibrary("To kill a mocking bird", "Harper Lee", "read", "129");
-addBookToLibrary("Enjoy your life", "Al-Areefy", "read", "364");
+addBookToLibrary("To kill a mocking bird", "Harper Lee", "Read", "129");
+addBookToLibrary("Enjoy your life", "Al-Areefy", "Read", "364");
 
 function renderLibrary() {
   container.innerHTML = "";
@@ -101,6 +101,12 @@ function renderLibrary() {
     btn.addEventListener("click", (e) => {
       const bookId = e.target.getAttribute("data-id");
       removeBook(bookId);
+    });
+  });
+  document.querySelectorAll(".edit-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const bookId = e.target.getAttribute("data-id");
+      startEditBook(bookId);
     });
   });
 }
